@@ -10,7 +10,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'quantmodels = quantmodels.opm:binomial_option_pricing',  # Replace 'your_script_name' with the actual name of your script
+            'quantmodels = quantmodels.opm:binomial_option_pricing',  
         ],
     },
     author='Tamilselvan_Arjunan',
