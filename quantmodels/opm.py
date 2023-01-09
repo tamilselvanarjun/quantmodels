@@ -34,18 +34,6 @@ def black_scholes_option_pricing(S, K, T, r, sigma, option_type='call'):
         raise ValueError("Invalid option type. Use 'call' or 'put'.")
     return price
     
-# Example Usage
-# if __name__ == "__main__":
-#     underlying_price = 100  # Current price of the underlying asset
-#     strike_price = 100      # Strike price of the option
-#     time_to_maturity = 1    # Time to maturity in years
-#     risk_free_rate = 0.05   # Risk-free interest rate
-#     volatility = 0.2        # Volatility of the underlying asset
-# 
-#     call_price = black_scholes_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, 'call')
-#     put_price = black_scholes_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, 'put')
-#     print(f"Black-Scholes Call Option Price: {call_price:.2f}")
-#     print(f"Black-Scholes Put Option Price: {put_price:.2f}")
 
 
 def black_scholes_implied_volatility(option_price, S, K, T, r, option_type='call'):
