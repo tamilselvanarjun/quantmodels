@@ -1,6 +1,21 @@
 import math
 
 def binomial_option_pricing(S, K, T, r, sigma, n, option_type='call'):
+    """
+    Calculate the option price using the binomial option pricing model.
+
+    Parameters:
+    - S (float): Current price of the underlying asset.
+    - K (float): Strike price of the option.
+    - T (float): Time to maturity in years.
+    - r (float): Risk-free interest rate.
+    - sigma (float): Volatility of the underlying asset.
+    - n (int): Number of periods in the binomial model.
+    - option_type (str): Type of option ('call' or 'put'). Default is 'call'.
+
+    Returns:
+    - float: Option price calculated using the binomial option pricing model.
+    """
     dt = T / n
     u = math.exp(sigma * math.sqrt(dt))
     d = 1 / u
@@ -18,15 +33,15 @@ def binomial_option_pricing(S, K, T, r, sigma, n, option_type='call'):
     return option_values[0][0]
 
 # Example Usage
-#if __name__ == "__main__":
-#    underlying_price = 100  # Current price of the underlying asset
-#    strike_price = 100      # Strike price of the option
-#    time_to_maturity = 1    # Time to maturity in years
-#    risk_free_rate = 0.05   # Risk-free interest rate
-#    volatility = 0.2       # Volatility of the underlying asset
-#    periods = 100           # Number of periods in the binomial model
+if __name__ == "__main__":
+    underlying_price = 100  # Current price of the underlying asset
+    strike_price = 100      # Strike price of the option
+    time_to_maturity = 1    # Time to maturity in years
+    risk_free_rate = 0.05   # Risk-free interest rate
+    volatility = 0.2       # Volatility of the underlying asset
+    periods = 100           # Number of periods in the binomial model
 
-#    call_price = binomial_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, periods, 'call')
-#    put_price = binomial_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, periods, 'put')
-#    print(f"Call Option Price: {call_price:.2f}")
-#    print(f"Put Option Price: {put_price:.2f}")
+    call_price = binomial_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, periods, 'call')
+    put_price = binomial_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, periods, 'put')
+    print(f"Call Option Price: {call_price:.2f}")
+    print(f"Put Option Price: {put_price:.2f}")
