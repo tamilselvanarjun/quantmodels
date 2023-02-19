@@ -5,7 +5,8 @@ setup(
     version='1.0.0',  # Replace with your package version
     packages=find_packages(),
     install_requires=[
-       
+        # Add any dependencies your script might have
+        # For this example, there are no additional dependencies
     ],
     entry_points={
         'console_scripts': [
