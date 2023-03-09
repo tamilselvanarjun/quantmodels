@@ -66,16 +66,4 @@ def black_scholes_implied_volatility(option_price, S, K, T, r, option_type='call
 
     return implied_volatility
 
-# Example Usage
-# if __name__ == "__main__":
-#     option_price = 10            # Market price of the option
-#     underlying_price = 100       # Current price of the underlying asset
-#     strike_price = 100           # Strike price of the option
-#     time_to_maturity = 1         # Time to maturity in years
-#     risk_free_rate = 0.05        # Risk-free interest rate
-# 
-#     implied_volatility_call = black_scholes_implied_volatility(option_price, underlying_price, strike_price, time_to_maturity, risk_free_rate, 'call')
-#     implied_volatility_put = black_scholes_implied_volatility(option_price, underlying_price, strike_price, time_to_maturity, risk_free_rate, 'put')
-#     
-#     print(f"Implied Volatility for Call Option: {implied_volatility_call:.4f}")
-#     print(f"Implied Volatility for Put Option: {implied_volatility_put:.4f}")
+
