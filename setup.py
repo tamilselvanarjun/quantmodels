@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='quantmodels',  # Replace with your package name
-    version='1.0.0',  
+    version='1.0.0',  # Replace with your package version
     packages=find_packages(),
     install_requires=[
         # Add any dependencies your script might have
