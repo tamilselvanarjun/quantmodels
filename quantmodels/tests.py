@@ -4,7 +4,7 @@ from option_pricing import binomial_option_pricing, black_scholes_option_pricing
 class TestOptionPricing(unittest.TestCase):
 
     def test_binomial_option_pricing(self):
-        
+        # Test call option pricing using binomial model.
         call_price = binomial_option_pricing(100, 100, 1, 0.05, 0.2, 100, 'call')
         self.assertAlmostEqual(call_price, 10.4506, places=4)
 
