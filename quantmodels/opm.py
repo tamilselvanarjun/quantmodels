@@ -1,4 +1,7 @@
 import math
+from scipy.stats import norm
+from scipy.optimize import newton
+import math
 
 def binomial_option_pricing(S, K, T, r, sigma, n, option_type='call'):
     dt = T / n
@@ -55,3 +58,23 @@ if __name__ == "__main__":
     put_price = black_scholes_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, 'put')
     print(f"Black-Scholes Call Option Price: {call_price:.2f}")
     print(f"Black-Scholes Put Option Price: {put_price:.2f}")
+
+
+def black_scholes_implied_volatility(option_price, S, K, T, r, option_type='call'):
+    def black_scholes_price(sigma):
+        d1 = (math.log(S / K) + (r + 0.5 * sigma**2) * T) / (sigma * math.sqrt(T))
+        d2 = d1 - sigma * math.sqrt(T)
+
+        if option_type == 'call':
+            price = S * norm.cdf(d1) - K * math.exp(-r * T) * norm.cdf(d2)
+        elif option_type == 'put':
+            price = K * math.exp(-r * T) * norm.cdf(-d2) - S * norm.cdf(-d1)
+        else:
+            raise ValueError("Invalid option type. Use 'call' or 'put'.")
+
+        return price - option_price
+
+    implied_volatility = newton(black_scholes_price, x0=0.5)
+
+    return implied_volatility
+
