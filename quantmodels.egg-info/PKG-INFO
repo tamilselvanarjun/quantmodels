@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: quantmodels
-Version: 1.0.0
+Version: 2.0.0
 Summary: A python based financial models simulation to estimate the value of π
 Home-page: https://github.com/arjunlimat/quantmodels
 Author: Tamilselvan_Arjunan
@@ -24,7 +24,7 @@ pip install quantmodels
 
 Included Financial Models
 1. Binomial Option Pricing Model (BOPM)
-The Binomial Option Pricing Model is a numerical method used for option pricing. It calculates the option price and call option price based on parameters such as underlying price, strike price, risk-free rate, volatility, time to maturity, and the number of steps in the binomial tree.
+The Binomial Option Pricing Model is a numerical method used for option pricing. It calculates the option price and call option price based on parameters such as underlying price, strike price, risk-free rate, volatility, time to maturity, and the number of steps in the binomial tree
 
 
 from quantmodels.opm import binomial_option_pricing
