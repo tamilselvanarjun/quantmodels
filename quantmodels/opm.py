@@ -21,8 +21,6 @@ def binomial_option_pricing(S, K, T, r, sigma, n, option_type='call'):
     return option_values[0][0]
 
 
-<<<<<<< HEAD
-=======
 #    call_price = binomial_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, periods, 'call')
 #    put_price = binomial_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, periods, 'put')
 #    print(f"Call Option Price: {call_price:.2f}")
@@ -85,4 +83,3 @@ def black_scholes_implied_volatility(option_price, S, K, T, r, option_type='call
 #     
 #     print(f"Implied Volatility for Call Option: {implied_volatility_call:.4f}")
 #     print(f"Implied Volatility for Put Option: {implied_volatility_put:.4f}")
->>>>>>> 1cc94a753385b9d8051b72d3f867465757818733
