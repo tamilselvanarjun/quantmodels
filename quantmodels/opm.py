@@ -54,21 +54,22 @@ def black_scholes_implied_volatility(option_price, S, K, T, r, option_type='call
 
     return implied_volatility
 
-if __name__ == "__main__":
-    logging.info("Calculating binomial option pricing")
-    call_price = binomial_option_pricing(100, 100, 1, 0.05, 0.2, 100, 'call')
-    put_price = binomial_option_pricing(100, 100, 1, 0.05, 0.2, 100, 'put')
-    logging.info(f"Binomial Call Option Price: {call_price:.2f}")
-    logging.info(f"Binomial Put Option Price: {put_price:.2f}")
-
-    logging.info("Calculating Black-Scholes option pricing")
-    call_price_bs = black_scholes_option_pricing(100, 100, 1, 0.05, 0.2, 'call')
-    put_price_bs = black_scholes_option_pricing(100, 100, 1, 0.05, 0.2, 'put')
-    logging.info(f"Black-Scholes Call Option Price: {call_price_bs:.2f}")
-    logging.info(f"Black-Scholes Put Option Price: {put_price_bs:.2f}")
-
-    logging.info("Calculating Black-Scholes implied volatility")
-    implied_volatility_call = black_scholes_implied_volatility(10, 100, 100, 1, 0.05, 'call')
-    implied_volatility_put = black_scholes_implied_volatility(10, 100, 100, 1, 0.05, 'put')
-    logging.info(f"Implied Volatility for Call Option: {implied_volatility_call:.4f}")
-    logging.info(f"Implied Volatility for Put Option: {implied_volatility_put:.4f}")
+# Commented out the Example Usage block
+# if __name__ == "__main__":
+#     logging.info("Calculating binomial option pricing")
+#     call_price = binomial_option_pricing(100, 100, 1, 0.05, 0.2, 100, 'call')
+#     put_price = binomial_option_pricing(100, 100, 1, 0.05, 0.2, 100, 'put')
+#     logging.info(f"Binomial Call Option Price: {call_price:.2f}")
+#     logging.info(f"Binomial Put Option Price: {put_price:.2f}")
+# 
+#     logging.info("Calculating Black-Scholes option pricing")
+#     call_price_bs = black_scholes_option_pricing(100, 100, 1, 0.05, 0.2, 'call')
+#     put_price_bs = black_scholes_option_pricing(100, 100, 1, 0.05, 0.2, 'put')
+#     logging.info(f"Black-Scholes Call Option Price: {call_price_bs:.2f}")
+#     logging.info(f"Black-Scholes Put Option Price: {put_price_bs:.2f}")
+# 
+#     logging.info("Calculating Black-Scholes implied volatility")
+#     implied_volatility_call = black_scholes_implied_volatility(10, 100, 100, 1, 0.05, 'call')
+#     implied_volatility_put = black_scholes_implied_volatility(10, 100, 100, 1, 0.05, 'put')
+#     logging.info(f"Implied Volatility for Call Option: {implied_volatility_call:.4f}")
+#     logging.info(f"Implied Volatility for Put Option: {implied_volatility_put:.4f}")
