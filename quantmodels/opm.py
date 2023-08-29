@@ -1,7 +1,10 @@
 import math
 from scipy.stats import norm
 from scipy.optimize import newton
-import math
+import logging
+
+# Configure logging
+logging.basicConfig(filename='option_pricing.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def binomial_option_pricing(S, K, T, r, sigma, n, option_type='call'):
     dt = T / n
@@ -20,12 +23,6 @@ def binomial_option_pricing(S, K, T, r, sigma, n, option_type='call'):
 
     return option_values[0][0]
 
-
-#    call_price = binomial_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, periods, 'call')
-#    put_price = binomial_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, periods, 'put')
-#    print(f"Call Option Price: {call_price:.2f}")
-#    print(f"Put Option Price: {put_price:.2f}")
-
 def black_scholes_option_pricing(S, K, T, r, sigma, option_type='call'):
     d1 = (math.log(S / K) + (r + 0.5 * sigma**2) * T) / (sigma * math.sqrt(T))
     d2 = d1 - sigma * math.sqrt(T)
@@ -36,21 +33,8 @@ def black_scholes_option_pricing(S, K, T, r, sigma, option_type='call'):
         price = K * math.exp(-r * T) * norm.cdf(-d2) - S * math.exp(-r * T) * norm.cdf(-d1)
     else:
         raise ValueError("Invalid option type. Use 'call' or 'put'.")
-    return price
-    
-# Example Usage
-# if __name__ == "__main__":
-#     underlying_price = 100  # Current price of the underlying asset
-#     strike_price = 100      # Strike price of the option
-#     time_to_maturity = 1    # Time to maturity in years
-#     risk_free_rate = 0.05   # Risk-free interest rate
-#     volatility = 0.2        # Volatility of the underlying asset
-# 
-#     call_price = black_scholes_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, 'call')
-#     put_price = black_scholes_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, 'put')
-#     print(f"Black-Scholes Call Option Price: {call_price:.2f}")
-#     print(f"Black-Scholes Put Option Price: {put_price:.2f}")
 
+    return price
 
 def black_scholes_implied_volatility(option_price, S, K, T, r, option_type='call'):
     def black_scholes_price(sigma):
@@ -70,16 +54,21 @@ def black_scholes_implied_volatility(option_price, S, K, T, r, option_type='call
 
     return implied_volatility
 
-# Example Usage
-# if __name__ == "__main__":
-#     option_price = 10            # Market price of the option
-#     underlying_price = 100       # Current price of the underlying asset
-#     strike_price = 100           # Strike price of the option
-#     time_to_maturity = 1         # Time to maturity in years
-#     risk_free_rate = 0.05        # Risk-free interest rate
-# 
-#     implied_volatility_call = black_scholes_implied_volatility(option_price, underlying_price, strike_price, time_to_maturity, risk_free_rate, 'call')
-#     implied_volatility_put = black_scholes_implied_volatility(option_price, underlying_price, strike_price, time_to_maturity, risk_free_rate, 'put')
-#     
-#     print(f"Implied Volatility for Call Option: {implied_volatility_call:.4f}")
-#     print(f"Implied Volatility for Put Option: {implied_volatility_put:.4f}")
+if __name__ == "__main__":
+    logging.info("Calculating binomial option pricing")
+    call_price = binomial_option_pricing(100, 100, 1, 0.05, 0.2, 100, 'call')
+    put_price = binomial_option_pricing(100, 100, 1, 0.05, 0.2, 100, 'put')
+    logging.info(f"Binomial Call Option Price: {call_price:.2f}")
+    logging.info(f"Binomial Put Option Price: {put_price:.2f}")
+
+    logging.info("Calculating Black-Scholes option pricing")
+    call_price_bs = black_scholes_option_pricing(100, 100, 1, 0.05, 0.2, 'call')
+    put_price_bs = black_scholes_option_pricing(100, 100, 1, 0.05, 0.2, 'put')
+    logging.info(f"Black-Scholes Call Option Price: {call_price_bs:.2f}")
+    logging.info(f"Black-Scholes Put Option Price: {put_price_bs:.2f}")
+
+    logging.info("Calculating Black-Scholes implied volatility")
+    implied_volatility_call = black_scholes_implied_volatility(10, 100, 100, 1, 0.05, 'call')
+    implied_volatility_put = black_scholes_implied_volatility(10, 100, 100, 1, 0.05, 'put')
+    logging.info(f"Implied Volatility for Call Option: {implied_volatility_call:.4f}")
+    logging.info(f"Implied Volatility for Put Option: {implied_volatility_put:.4f}")
