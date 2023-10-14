@@ -11,3 +11,12 @@ class TestOptionPricing(unittest.TestCase):
         # Test put option pricing using binomial model
         put_price = binomial_option_pricing(100, 100, 1, 0.05, 0.2, 100, 'put')
         self.assertAlmostEqual(put_price, 5.5735, places=4)
+        
+     def test_black_scholes_option_pricing(self):
+        # Test call option pricing using Black-Scholes model
+        call_price = black_scholes_option_pricing(100, 100, 1, 0.05, 0.2, 'call')
+        self.assertAlmostEqual(call_price, 10.4506, places=4)
+
+        # Test put option pricing using Black-Scholes model
+        put_price = black_scholes_option_pricing(100, 100, 1, 0.05, 0.2, 'put')
+        self.assertAlmostEqual(put_price, 5.5735, places=4)
