@@ -11,7 +11,8 @@ pip install quantmodels
 
 Included Financial Models
 1. Binomial Option Pricing Model (BOPM)
-The Binomial Option Pricing Model is a numerical method used for option pricing. It calculates the option price and call option price based on parameters such as underlying price, strike price, risk-free rate, volatility, time to maturity, and the number of steps in the binomial tree.
+
+The Binomial Option Pricing Model is a numerical technique employed to determine option prices. It computes both the option price and call option price by considering various parameters including the underlying price, strike price, risk-free rate, volatility, time to maturity, and the number of steps in the binomial tree.
 
 
 from quantmodels.opm import binomial_option_pricing
