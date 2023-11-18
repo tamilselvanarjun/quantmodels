@@ -29,3 +29,6 @@ class TestOptionPricing(unittest.TestCase):
         # Test implied volatility calculation using Black-Scholes model for put option
         implied_volatility_put = black_scholes_implied_volatility(10, 100, 100, 1, 0.05, 'put')
         self.assertAlmostEqual(implied_volatility_put, 0.2000, places=4)
+        
+if __name__ == '__main__':
+    unittest.main()
