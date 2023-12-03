@@ -39,3 +39,11 @@ put_price = binomial_option_pricing(underlying_price, strike_price, time_to_matu
 print(f"Call Option Price: {call_price:.2f}")
 print(f"Put Option Price: {put_price:.2f}")
 ```
+
+
+```bash
+call_price_bs = black_scholes_option_pricing(100, 100, 1, 0.05, 0.2, 'call')
+put_price_bs = black_scholes_option_pricing(100, 100, 1, 0.05, 0.2, 'put')
+logging.info(f"Black-Scholes Call Option Price: {call_price_bs:.2f}")
+logging.info(f"Black-Scholes Put Option Price: {put_price_bs:.2f}")
+```
