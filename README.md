@@ -44,6 +44,10 @@ print(f"Put Option Price: {put_price:.2f}")
 ```bash
 call_price_bs = black_scholes_option_pricing(100, 100, 1, 0.05, 0.2, 'call')
 put_price_bs = black_scholes_option_pricing(100, 100, 1, 0.05, 0.2, 'put')
-logging.info(f"Black-Scholes Call Option Price: {call_price_bs:.2f}")
-logging.info(f"Black-Scholes Put Option Price: {put_price_bs:.2f}")
+```
+
+
+```bash
+implied_volatility_call = black_scholes_implied_volatility(10, 100, 100, 1, 0.05, 'call')
+implied_volatility_put = black_scholes_implied_volatility(10, 100, 100, 1, 0.05, 'put')
 ```
