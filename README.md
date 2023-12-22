@@ -51,9 +51,18 @@ from quantmodels.opm import black_scholes_option_pricing
 # Example usage for Black-Scholes Option Pricing Model
 call_price_bs = black_scholes_option_pricing(100, 100, 1, 0.05, 0.2, 'call')
 put_price_bs = black_scholes_option_pricing(100, 100, 1, 0.05, 0.2, 'put')
+```
 
+#### Example usage for Black-Scholes Implied Volatility
 
-```bash
+The Black-Scholes Implied Volatility is a method used to estimate the volatility of an underlying asset based on its option price. It calculates the implied volatility for call and put options based on parameters such as option price, underlying price, strike price, risk-free rate, and time to maturity.
+
+**Usage:**
+
+```python
+from quantmodels.opm import black_scholes_implied_volatility
+
+# Example usage for Black-Scholes Implied Volatility
 implied_volatility_call = black_scholes_implied_volatility(10, 100, 100, 1, 0.05, 'call')
 implied_volatility_put = black_scholes_implied_volatility(10, 100, 100, 1, 0.05, 'put')
 ```
