@@ -39,12 +39,18 @@ put_price = binomial_option_pricing(underlying_price, strike_price, time_to_matu
 print(f"Call Option Price: {call_price:.2f}")
 print(f"Put Option Price: {put_price:.2f}")
 ```
+#### Example usage for Black-Scholes Option Pricing Model
 
+The Black-Scholes Option Pricing Model is a mathematical model used for pricing options. It calculates the option price based on parameters such as underlying price, strike price, risk-free rate, volatility, and time to maturity.
 
-```bash
+**Usage:**
+
+```python
+from quantmodels.opm import black_scholes_option_pricing
+
+# Example usage for Black-Scholes Option Pricing Model
 call_price_bs = black_scholes_option_pricing(100, 100, 1, 0.05, 0.2, 'call')
 put_price_bs = black_scholes_option_pricing(100, 100, 1, 0.05, 0.2, 'put')
-```
 
 
 ```bash
