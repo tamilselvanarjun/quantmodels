@@ -16,24 +16,24 @@ The Binomial Option Pricing Model is a numerical method used for option pricing.
 
 from quantmodels.opm import binomial_option_pricing
 
-#### Example usage for Put Option Price
+#### Example usage for Binomial Option Pricing Model
 
-Parameters
-underlying_price: Current price of the underlying asset.
+The Binomial Option Pricing Model is a numerical method used for option pricing. It calculates the option price and call option price based on parameters such as underlying price, strike price, risk-free rate, volatility, time to maturity, and the number of steps in the binomial tree.
 
-strike_price: Strike price of the option.
+**Usage:**
 
-risk_free_rate: Risk-free interest rate.
+```python
+from quantmodels.opm import binomial_option_pricing
 
-volatility: Volatility of the underlying asset.
+# Example usage for Binomial Option Pricing Model
+underlying_price = 100  # Current price of the underlying asset
+strike_price = 100      # Strike price of the option
+time_to_maturity = 1    # Time to maturity in years
+risk_free_rate = 0.05   # Risk-free interest rate
+volatility = 0.2        # Volatility of the underlying asset
+periods = 100           # Number of steps in the binomial tree
 
-time_to_maturity: Time to maturity of the option.
-
-num_steps: Number of steps in the binomial tree.
-
-```bash
 call_price = binomial_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, periods, 'call')
-
 put_price = binomial_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, periods, 'put')
 
 print(f"Call Option Price: {call_price:.2f}")
