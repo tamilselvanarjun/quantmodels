@@ -13,6 +13,9 @@ Included Financial Models
 1. Binomial Option Pricing Model (BOPM)
 The Binomial Option Pricing Model is a numerical method used for option pricing. It calculates the option price and call option price based on parameters such as underlying price, strike price, risk-free rate, volatility, time to maturity, and the number of steps in the binomial tree
 
+2. Black-Scholes Option Pricing Model (BSOPM)
+The Black-Scholes Option Pricing Model is a widely used mathematical model for pricing European options. It calculates the theoretical price of call and put options based on parameters such as the current price of the underlying asset, the strike price of the option, the risk-free interest rate, the volatility of the underlying asset, and the time to maturity of the option.
+
 
 from quantmodels.opm import binomial_option_pricing
 
