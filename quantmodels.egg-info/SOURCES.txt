@@ -1,0 +1,7 @@
+README.md
+setup.py
+quantmodels.egg-info/PKG-INFO
+quantmodels.egg-info/SOURCES.txt
+quantmodels.egg-info/dependency_links.txt
+quantmodels.egg-info/entry_points.txt
+quantmodels.egg-info/top_level.txt

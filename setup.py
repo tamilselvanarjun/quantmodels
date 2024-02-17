@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='pyfinmodels',  # Replace with your package name
+    name='quantmodels',  # Replace with your package name
     version='1.0.0',  # Replace with your package version
     packages=find_packages(),
     install_requires=[
@@ -10,7 +10,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'pyfinmodels = models.opm:binomial_option_pricing',  # Replace 'your_script_name' with the actual name of your script
+            'quantmodels = quantmodels.opm:binomial_option_pricing',  # Replace 'your_script_name' with the actual name of your script
         ],
     },
     author='Tamilselvan_Arjunan',
@@ -18,7 +18,7 @@ setup(
     description='A python based financial models simulation to estimate the value of π',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/arjunlimat/pyfinmodels',  # Update with your GitHub repository URL
+    url='https://github.com/arjunlimat/quantmodels',  # Update with your GitHub repository URL
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',

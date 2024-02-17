@@ -28,6 +28,5 @@ def binomial_option_pricing(S, K, T, r, sigma, n, option_type='call'):
 
 #    call_price = binomial_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, periods, 'call')
 #    put_price = binomial_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, periods, 'put')
-
 #    print(f"Call Option Price: {call_price:.2f}")
 #    print(f"Put Option Price: {put_price:.2f}")

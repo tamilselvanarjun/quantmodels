@@ -1,2 +1,0 @@
-[console_scripts]
-pyfinmodels = models.opm:binomial_option_pricing

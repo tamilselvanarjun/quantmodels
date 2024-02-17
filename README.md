@@ -1,20 +1,20 @@
-#### FinModels
+#### quantmodels
 
 #### Overview
 
-`FinModels` is a Python package that provides implementations of various financial models commonly used in finance and investment analysis.
+`quantmodels` is a Python package that provides implementations of various financial models commonly used in finance and investment analysis.
 
 #### Installation
 
 You can install the package using pip:
-pip install finmodels
+pip install quantmodels
 
 Included Financial Models
 1. Binomial Option Pricing Model (BOPM)
 The Binomial Option Pricing Model is a numerical method used for option pricing. It calculates the option price and call option price based on parameters such as underlying price, strike price, risk-free rate, volatility, time to maturity, and the number of steps in the binomial tree.
 
 
-from finmodels.models import binomial_option_pricing
+from quantmodels.opm import binomial_option_pricing
 
 #### Example usage for Put Option Price
 

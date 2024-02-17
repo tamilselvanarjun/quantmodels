@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
-Name: pyfinmodels
+Name: quantmodels
 Version: 1.0.0
 Summary: A python based financial models simulation to estimate the value of π
-Home-page: https://github.com/arjunlimat/pyfinmodels
+Home-page: https://github.com/arjunlimat/quantmodels
 Author: Tamilselvan_Arjunan
 Author-email: nishantamil@gmail.com
 Classifier: Programming Language :: Python :: 3
@@ -11,23 +11,23 @@ Classifier: Operating System :: OS Independent
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
 
-#### FinModels
+#### quantmodels
 
 #### Overview
 
-`FinModels` is a Python package that provides implementations of various financial models commonly used in finance and investment analysis.
+`quantmodels` is a Python package that provides implementations of various financial models commonly used in finance and investment analysis.
 
 #### Installation
 
 You can install the package using pip:
-pip install finmodels
+pip install quantmodels
 
 Included Financial Models
 1. Binomial Option Pricing Model (BOPM)
 The Binomial Option Pricing Model is a numerical method used for option pricing. It calculates the option price and call option price based on parameters such as underlying price, strike price, risk-free rate, volatility, time to maturity, and the number of steps in the binomial tree.
 
 
-from finmodels.models import binomial_option_pricing
+from quantmodels.opm import binomial_option_pricing
 
 #### Example usage for Put Option Price
 

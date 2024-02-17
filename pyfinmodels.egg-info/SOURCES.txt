@@ -1,7 +1,0 @@
-README.md
-setup.py
-pyfinmodels.egg-info/PKG-INFO
-pyfinmodels.egg-info/SOURCES.txt
-pyfinmodels.egg-info/dependency_links.txt
-pyfinmodels.egg-info/entry_points.txt
-pyfinmodels.egg-info/top_level.txt
