@@ -6,11 +6,11 @@ setup(
     packages=find_packages(),
     install_requires=[
         # Add any dependencies your script might have
-        # For this example, there are no additional dependencies
+        # For this example, there are no additional dependencies.
     ],
     entry_points={
         'console_scripts': [
-            'quantmodels = quantmodels.opm:binomial_option_pricing',  # Replace 'your_script_name' with the actual name of your script
+            'quantmodels = quantmodels.opm:binomial_option_pricing',  # Replace 'your_script_name' with the actual name of your script.
         ],
     },
     author='Tamilselvan_Arjunan',
