@@ -1,4 +1,7 @@
 import math
+from scipy.stats import norm
+from scipy.optimize import newton
+import math
 
 def binomial_option_pricing(S, K, T, r, sigma, n, option_type='call'):
     dt = T / n
@@ -18,3 +21,61 @@ def binomial_option_pricing(S, K, T, r, sigma, n, option_type='call'):
     return option_values[0][0]
 
 
+
+def black_scholes_option_pricing(S, K, T, r, sigma, option_type='call'):
+    d1 = (math.log(S / K) + (r + 0.5 * sigma**2) * T) / (sigma * math.sqrt(T))
+    d2 = d1 - sigma * math.sqrt(T)
+
+    if option_type == 'call':
+        price = S * math.exp(-r * T) * norm.cdf(d1) - K * math.exp(-r * T) * norm.cdf(d2)
+    elif option_type == 'put':
+        price = K * math.exp(-r * T) * norm.cdf(-d2) - S * math.exp(-r * T) * norm.cdf(-d1)
+    else:
+        raise ValueError("Invalid option type. Use 'call' or 'put'.")
+    return price
+    
+# Example Usage
+# if __name__ == "__main__":
+#     underlying_price = 100  # Current price of the underlying asset
+#     strike_price = 100      # Strike price of the option
+#     time_to_maturity = 1    # Time to maturity in years
+#     risk_free_rate = 0.05   # Risk-free interest rate
+#     volatility = 0.2        # Volatility of the underlying asset
+# 
+#     call_price = black_scholes_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, 'call')
+#     put_price = black_scholes_option_pricing(underlying_price, strike_price, time_to_maturity, risk_free_rate, volatility, 'put')
+#     print(f"Black-Scholes Call Option Price: {call_price:.2f}")
+#     print(f"Black-Scholes Put Option Price: {put_price:.2f}")
+
+
+def black_scholes_implied_volatility(option_price, S, K, T, r, option_type='call'):
+    def black_scholes_price(sigma):
+        d1 = (math.log(S / K) + (r + 0.5 * sigma**2) * T) / (sigma * math.sqrt(T))
+        d2 = d1 - sigma * math.sqrt(T)
+
+        if option_type == 'call':
+            price = S * norm.cdf(d1) - K * math.exp(-r * T) * norm.cdf(d2)
+        elif option_type == 'put':
+            price = K * math.exp(-r * T) * norm.cdf(-d2) - S * norm.cdf(-d1)
+        else:
+            raise ValueError("Invalid option type. Use 'call' or 'put'.")
+
+        return price - option_price
+
+    implied_volatility = newton(black_scholes_price, x0=0.5)
+
+    return implied_volatility
+
+# Example Usage
+# if __name__ == "__main__":
+#     option_price = 10            # Market price of the option
+#     underlying_price = 100       # Current price of the underlying asset
+#     strike_price = 100           # Strike price of the option
+#     time_to_maturity = 1         # Time to maturity in years
+#     risk_free_rate = 0.05        # Risk-free interest rate
+# 
+#     implied_volatility_call = black_scholes_implied_volatility(option_price, underlying_price, strike_price, time_to_maturity, risk_free_rate, 'call')
+#     implied_volatility_put = black_scholes_implied_volatility(option_price, underlying_price, strike_price, time_to_maturity, risk_free_rate, 'put')
+#     
+#     print(f"Implied Volatility for Call Option: {implied_volatility_call:.4f}")
+#     print(f"Implied Volatility for Put Option: {implied_volatility_put:.4f}")
