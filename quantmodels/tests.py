@@ -1,5 +1,5 @@
 import unittest
-from option_pricing import binomial_option_pricing, black_scholes_option_pricing, black_scholes_implied_volatility
+from option_pricing import binomial_option_pricing
 
 class TestOptionPricing(unittest.TestCase):
 
